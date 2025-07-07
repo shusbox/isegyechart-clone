@@ -10,12 +10,17 @@
 }
 
 header {
-  padding: 28px 96px 28px 96px;
+  padding: 24px 96px 24px 96px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+}
+
+.line {
+  height: 1px;
+  border: none;
+  background-color: #e0e0e0;
 }
 
 #header-field1 {
@@ -62,4 +67,78 @@ header {
   border: none;
   border-radius: 4px;
   background-color: #0e9880;
+}
+
+#carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.carousel-img {
+  width: 610px;
+  height: 260px;
+  border-radius: 8px;
+}
+
+#info-container {
+  padding: 0 96px 0 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#carousel-btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.carousel-btn {
+  margin: 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 100px;
+  background-color: #f0f0f0;
+}
+
+#info-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#info-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-btn {
+  margin: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.info-btn-ico {
+  width: 24px;
+  padding: 3px;
+  border: solid 1px #f0f0f0;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.info-btn-txt {
+  margin: 0;
+  margin-right: 8px;
+  padding: 0;
+  font-size: 18px;
 }
