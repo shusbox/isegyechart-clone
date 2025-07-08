@@ -7,10 +7,22 @@
 
   <link rel="icon" href="/resource/favicon.png">
 
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/main/top.css">
+  <link rel="stylesheet" href="/css/main/main.css">
 
   <style>
-    /* 프리텐다드 */ @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    /* 프리텐다드 */
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    /* Sentic */
+    @font-face {
+        font-family: 'Sentic';
+        src: url('SenticText-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -54,6 +66,7 @@
           <div id="carousel-track"></div>
         </div>
         <div id="info-bottom">
+          <!-- 버튼아이콘이가운데정렬안돼잇는것같은데. ... ... 하면좋을듯 -->
           <div id="carousel-btn-container">
             <button class="carousel-btn" id="back">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +106,36 @@
     </div>
     <hr class="line" style="margin-top: 16px;">
   </div>
+
+  <main>
+    <div id="main-container">
+      <div id="main-field1">
+        <div id="song-selector-container">
+          <div style="display: flex; align-items: center;">
+            <div id="music">
+              <img src="/resource/cover/5th_Stargazers.png" id="song-selector-cover" width="48px">
+              <img src="/resource/record.png" id="song-selector-record" width="40px">
+            </div>
+            <div id="music-title">
+              <h1> Stargazers </h1>
+              <p> 이세계아이돌 </p>
+            </div>            
+          </div>
+          <button id="music-btn">
+            <p style="margin: 0; font-size: 12px;"> 곡 선택 </p>
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="12px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
+            class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+              <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="main-field2">
+
+      </div>
+    </div>
+  </main>
   <script src="/script/carousel.js"></script>
 </body>
 </html>

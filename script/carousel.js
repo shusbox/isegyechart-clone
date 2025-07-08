@@ -7,12 +7,13 @@ const carousel_txt = [
 ];
 
 const carousel_btn = [
-  { root: '/resource/banner/banner_2_desktop.png', txt: '이세계차트팀 지원하기' }
+  { root: '/resource/banner/banner_2_desktop.png', txt: '이세계차트팀 지원하기', click: 'https://cafe.naver.com/steamindiegame/16869116' }
 ];
 
 function renderCarouselTxt(data) {
   const track = document.getElementById('carousel-track');
 
+  // 첫번째장은 Stargazers 영어 혼자만 폰트 다른데 이건도대체어떢께해야하나요내공1억
   data.forEach(item => {
     const carousel_img_container = `
       <div class="carousel-img-container">
@@ -33,7 +34,7 @@ function renderCarouselBtn(data) {
   data.forEach(item => {
     const carousel_img_container = `
       <div class="carousel-img-container">
-        <button class="carousel-img-btn">
+        <button class="carousel-img-btn" onclick="window.open('${item.click}')">
           <p style="margin: 0; margin-left: 4px;"> ${item.txt} </p>
           <svg xmlns="http://www.w3.org/2000/svg"
           width="24px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
@@ -130,7 +131,7 @@ function makeTransitionHandler(Page) {
   return handler;
 }
 
-nextBtn.addEventListener('click', () => {
+function nextMove() {
   if (isAnimating) return;
   isAnimating = true;
   pageCount++;
@@ -142,9 +143,9 @@ nextBtn.addEventListener('click', () => {
     moveBtnOrigin();
     isAnimating = false;
   });
-});
+}
 
-backBtn.addEventListener('click', () => {
+function backMove() {
   if (isAnimating) return;
   isAnimating = true;
   pageCount--;
@@ -156,4 +157,11 @@ backBtn.addEventListener('click', () => {
     moveBtnOrigin();
     isAnimating = false;
   });
-})
+}
+
+nextBtn.addEventListener('click', nextMove);
+backBtn.addEventListener('click', backMove);
+
+setInterval(() => {
+  nextMove();
+}, 6000);
