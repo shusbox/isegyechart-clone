@@ -17,7 +17,7 @@
     /* Sentic */
     @font-face {
         font-family: 'Sentic';
-        src: url('SenticText-Medium.woff') format('woff');
+        src: url('/font/SenticText-Medium.woff') format('woff');
         font-weight: 500;
         font-style: normal;
         font-display: swap;
@@ -66,19 +66,18 @@
           <div id="carousel-track"></div>
         </div>
         <div id="info-bottom">
-          <!-- 버튼아이콘이가운데정렬안돼잇는것같은데. ... ... 하면좋을듯 -->
           <div id="carousel-btn-container">
             <button class="carousel-btn" id="back">
               <svg xmlns="http://www.w3.org/2000/svg"
-              width="16px" viewBox="0 0 24 24" fill="#202020" aria-hidden="true" data-slot="icon"
-              class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+              width="18px" viewBox="0 0 24 24" fill="#202020" aria-hidden="true" data-slot="icon"
+              style="display: block;" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
                 <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd"></path>
               </svg>
             </button>
             <button class="carousel-btn" id="next">
               <svg xmlns="http://www.w3.org/2000/svg"
-              width="16px" viewBox="0 0 24 24" fill="#202020" aria-hidden="true" data-slot="icon"
-              class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+              width="18px" viewBox="0 0 24 24" fill="#202020" aria-hidden="true" data-slot="icon"
+              style="display: block;" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
                 <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path>
               </svg>
             </button>
@@ -130,6 +129,37 @@
             </svg>
           </button>
         </div>
+        <div id="music-link-container">
+          <div id="music-link-title">
+            <div class="music-ico">
+              <svg xmlns="http://www.w3.org/2000/svg"
+              width="16px" viewBox="0 0 24 24" fill="#0e9880" aria-hidden="true" data-slot="icon"
+              style="display: block;" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+                <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd"></path>
+              </svg>              
+            </div>
+            <p style="margin: 0; margin-left: 12px;"> 음원 사이트 바로가기 </p>
+          </div>
+          <div id="music-link">
+            <!--
+            <div class="music-link-click">
+              <div style="display: flex; align-items: center;">
+                <img src="/resource/music/Melon.svg" width="20px">
+                <p> 멜론 </p>
+              </div>
+              <img src="/resource/arrow.svg" width="12px">
+            </div>
+            <div class="music-link-click">
+              <img src="/resource/music/Youtube.svg" width="20px">
+              <p> 유튜브 뮤비 </p>
+            </div>
+            <div class="music-link-click">
+              <img src="/resource/music/Youtube.svg" width="20px">
+              <p> 유튜브 음원 </p>
+            </div>
+            -->
+          </div>
+        </div>
       </div>
       <div id="main-field2">
 
@@ -137,5 +167,6 @@
     </div>
   </main>
   <script src="/script/carousel.js"></script>
+  <script src="/script/musiclink.js"></script>
 </body>
 </html>
