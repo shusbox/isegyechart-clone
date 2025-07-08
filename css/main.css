@@ -102,10 +102,10 @@ header {
 #carousel-track {
   display: flex;
   flex-direction: row;
-  gap: 16px;
 }
 
 .carousel-img-container {
+  margin-right: 16px;
   position: relative;
 }
 

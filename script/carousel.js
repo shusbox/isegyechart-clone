@@ -50,3 +50,110 @@ function renderCarouselBtn(data) {
 
 renderCarouselTxt(carousel_txt);
 renderCarouselBtn(carousel_btn);
+
+// 캐러셀 기능
+const slide = document.getElementById('carousel-slide');
+const track = document.getElementById('carousel-track');
+const nextBtn = document.getElementById('next');
+const backBtn = document.getElementById('back');
+const nextIconPath = nextBtn.querySelector('svg path');
+const backIconPath = backBtn.querySelector('svg path');
+const firstPage = track.children[0];
+const secondPage = track.children[1];
+const thirdPage = track.children[2];
+const lastlastPage = track.children[(track.children.length) - 2];
+const lastPage = track.children[(track.children.length) - 1];
+
+const clonefirstPage = firstPage.cloneNode(true);
+const clonesecondPage = secondPage.cloneNode(true);
+const clonethirdPage = thirdPage.cloneNode(true);
+const clonelastlastPage = lastlastPage.cloneNode(true);
+const clonelastPage = lastPage.cloneNode(true);
+
+track.insertBefore(clonelastPage, track.firstChild);
+track.insertBefore(clonelastlastPage, track.firstChild);
+track.appendChild(clonefirstPage);
+track.appendChild(clonesecondPage);
+track.appendChild(clonethirdPage);
+
+let pageCount = 2;
+let isAnimating = false;
+track.style.transform = `translateX(-${(626) * pageCount}px)`;
+
+// 왜 캐러셀 움직일떄 슬라이드 밑쪽 라운드가 뾰족해지는가에대한고찰
+function move() {
+  track.style.transition = 'transform 0.45s';
+  track.style.transform = `translateX(-${(626) * pageCount}px)`;
+}
+
+function moveBtn() {
+  nextBtn.style.transition = '0s';
+  backBtn.style.transition = '0s';
+  nextBtn.style.cursor = 'default';
+  backBtn.style.cursor = 'default';  
+  if (nextIconPath) nextIconPath.setAttribute('fill', '#8f8f8f');
+  if (backIconPath) backIconPath.setAttribute('fill', '#8f8f8f');
+  nextBtn.style.backgroundColor = '#f9f9f9';
+  backBtn.style.backgroundColor = '#f9f9f9';
+}
+
+function moveBtnOrigin() {
+  nextBtn.style.transition = '0s';
+  backBtn.style.transition = '0s';
+  nextBtn.style.cursor = 'pointer';
+  backBtn.style.cursor = 'pointer';  
+  if (nextIconPath) nextIconPath.setAttribute('fill', '#202020');
+  if (backIconPath) backIconPath.setAttribute('fill', '#202020');
+  nextBtn.style.backgroundColor = '#f0f0f0';
+  backBtn.style.backgroundColor = '#f0f0f0';
+}
+
+function transitionHandler(page) {
+  if (pageCount === 7 || pageCount === 0) {
+    track.style.transition = 'none';
+    pageCount = page;
+    track.style.transform = `translateX(-${626 * pageCount}px)`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition = 'transform 0.45s';
+      });
+    });
+  }
+}
+
+function makeTransitionHandler(Page) {
+  const handler = () => {
+    transitionHandler(Page);
+    track.removeEventListener('transitionend', handler);
+  };
+  return handler;
+}
+
+nextBtn.addEventListener('click', () => {
+  if (isAnimating) return;
+  isAnimating = true;
+  pageCount++;
+  moveBtn();
+  move();
+  
+  track.addEventListener('transitionend', makeTransitionHandler(2));
+  track.addEventListener('transitionend', () => {
+    moveBtnOrigin();
+    isAnimating = false;
+  });
+});
+
+backBtn.addEventListener('click', () => {
+  if (isAnimating) return;
+  isAnimating = true;
+  pageCount--;
+  moveBtn();
+  move();
+
+  track.addEventListener('transitionend', makeTransitionHandler(5));
+  track.addEventListener('transitionend', () => {
+    moveBtnOrigin();
+    isAnimating = false;
+  });
+})
