@@ -109,7 +109,7 @@
   <main>
     <div id="main-container">
       <div id="main-field1">
-        <div id="song-selector-container">
+        <div class="music-container" id="song-selector-container">
           <div style="display: flex; align-items: center;">
             <div id="music">
               <img src="/resource/cover/5th_Stargazers.png" id="song-selector-cover" width="48px">
@@ -129,18 +129,52 @@
             </svg>
           </button>
         </div>
-        <div id="music-link-container">
-          <div id="music-link-title">
+        <div class="music-container">
+          <div class="container-title">
             <div class="music-ico">
               <svg xmlns="http://www.w3.org/2000/svg"
-              width="16px" viewBox="0 0 24 24" fill="#0e9880" aria-hidden="true" data-slot="icon"
-              style="display: block;" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+              width="16px" viewBox="0 0 24 24" fill="#currentColor" aria-hidden="true" data-slot="icon"
+              class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
                 <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd"></path>
               </svg>              
             </div>
-            <p style="margin: 0; margin-left: 12px;"> 음원 사이트 바로가기 </p>
+            <p> 음원 사이트 바로가기 </p>
           </div>
           <div id="music-link"></div>
+        </div>
+        <div class="music-container">
+          <div class="container-title">
+            <div class="music-ico">
+              <svg xmlns="http://www.w3.org/2000/svg"
+              width="16px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+                <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <p> YouTube에서 보기 </p>          
+          </div>
+          <iframe src="https://www.youtube.com/embed/nz2_gNQDiVM?si=pcpJ2NtpbEIYG6oV"
+            id="music-play"
+            width="100%" height="215px"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+          <div id="music-play-info-container">
+            <div class="music-play-info">
+              <p> 조회수 </p>
+              <h1> 149만 </h1>
+            </div>
+            <hr class="music-play-info-line">
+            <div class="music-play-info">
+              <p> 좋아요 </p>
+              <h1> 3.9만 </h1>
+            </div>
+            <hr class="music-play-info-line">
+            <div class="music-play-info">
+              <p> 댓글 </p>
+              <h1> 5395 </h1>
+            </div>
+          </div>
         </div>
       </div>
       <div id="main-field2">

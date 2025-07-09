@@ -15,8 +15,8 @@ function renderMusic(data) {
   const link = document.getElementById('music-link');
 
   data.forEach(item => {
-    const music_link_click = `
-      <div class="music-link-click" onclick="window.open('${item.link}')">
+    const music_goto = `
+      <div class="music-goto" onclick="window.open('${item.link}')">
         <div style="display: flex; align-items: center;">
           <img src="${item.root}" width="20px">
           <p> ${item.name} </p>
@@ -24,7 +24,7 @@ function renderMusic(data) {
         <img src="/resource/arrow.svg" width="12px">
       </div>
     `;
-    link.insertAdjacentHTML('beforeend', music_link_click);
+    link.insertAdjacentHTML('beforeend', music_goto);
   });
 }
 renderMusic(music);

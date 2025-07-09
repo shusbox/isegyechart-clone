@@ -19,25 +19,79 @@ main {
   gap: 16px;
 }
 
+#main-field2 {
+  width: 830px;
+}
+
+/* 아이콘 */
 .music-ico {
   padding: 6px;
   border: solid 1px #f0f0f0;
   border-radius: 8px;
 }
 
-#main-field2 {
-  width: 830px;
+.music-ico svg {
+  display: block;
+  fill: #0e9880;
 }
 
-/* song selector */
-#song-selector-container {
-  padding: 12px;
+/* 타이틀 */
+.container-title {
+  align-self: baseline;
+  margin: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-title p {
+  margin: 0;
+  margin-left: 12px;
+}
+
+/* 바로가기 */
+.music-goto {
+  transition: 0.2s;
+  padding: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.music-goto:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.music-goto p {
+  margin: 0;
+  margin-left: 8px;
+  color: #646464;
+  font-size: 14px;
+}
+
+/* 컨테이너 */
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
   border-radius: 6px;
   background-color: white;
+}
+
+/* song selector */
+#song-selector-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #music {
@@ -95,43 +149,55 @@ main {
 }
 
 /* music link */
-#music-link-container {
-  padding: 12px;
-  border-radius: 6px;
-  background-color: white;
-}
-
-#music-link-title {
-  margin: 4px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 #music-link {
   margin: 4px;
   margin-top: 16px;
   display: grid;
   grid-template-columns: 186px 186px;
   justify-content: space-between;
-  row-gap: 8px;
+  gap: 8px;
 }
 
-.music-link-click {
-  padding: 14px;
-  padding-left: 12px;
-  padding-right: 12px;
+/* music play */
+#music-play {
+  display: block;
+  margin: 4px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+#music-play-info-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-radius: 4px;
-  background-color: #f9f9f9;
 }
 
-.music-link-click p {
+.music-play-info {
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-play-info p {
   margin: 0;
-  margin-left: 8px;
   color: #646464;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.music-play-info h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.music-play-info-line {
+  margin: 0;
+  display: inline-block;
+  width: 1px;
+  height: 44px;
+  border: none;
+  background-color: #e0e0e0;
 }
