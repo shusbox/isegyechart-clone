@@ -9,24 +9,26 @@
 
   <link rel="stylesheet" href="/css/main/top.css">
   <link rel="stylesheet" href="/css/main/main.css">
+  <link rel="stylesheet" href="/css/main/footer.css">
 
   <style>
     /* 프리텐다드 */
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-    /* Sentic */
     @font-face {
-        font-family: 'Sentic';
-        src: url('/font/SenticText-Medium.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
+      font-family: 'Product Sans';
+      font-style: normal;
+      font-weight: normal;
+      src: local('Product Sans'), url('/font/ProductSans-Regular.woff') format('woff');
     }
 
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Pretendard', sans-serif;
+      font-family: 
+        'Product Sans',
+        'Pretendard'
+      ;
       background-color: #f9f9f9;
     }
   </style>
@@ -36,6 +38,7 @@
   <div style="width: 100%; background-color: white; display: flex; flex-direction: column; align-items: center;">
     <div style="width: 1280px;">
       <header>
+        <!-- 헤더쪽 클릭하면 이동하는거 다 구현해두기!!!!! -->
         <div id="header-field1">
           <img src="/resource/isegyechart.svg" style="width: 154px; cursor: pointer;">
           <nav>
@@ -203,11 +206,25 @@
           <div class="music-goto-container" id="quick-link"></div>
         </div>
       </div>
-      <div id="main-field2">
-
-      </div>
+      <div id="main-field2"></div>
     </div>
   </main>
+
+  <hr class="line">
+
+  <footer>
+    <img src="/resource/isegyechart_gray.svg" width="154px">
+    <div>
+      <p> 인천광역시 연수구 왁엔터로 7-24 (송도동, 왁엔터테인먼트 사옥 6층 이세계차트팀 사무실) </p>
+      <p onclick="window.open('https://isegye.live/%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80-20250313.html')"> 개인정보 처리방침 | 서비스 이용약관 </p>
+    </div>
+    <div>
+      <p> Copyright © 2024. IsegyeChart · WAK Entertainment · ISEGYE IDOL. All rights reserved. </p>
+      <p> [Contact Us] contact@isegye.live </p>
+    </div>
+    <p> Build 1d8f8da | Rendered at 2025.07.09 13:26:05 </p>
+  </footer>
+
   <script src="/script/carousel.js"></script>
   <script src="/script/mainrendering.js"></script>
 </body>
