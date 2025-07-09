@@ -1,5 +1,6 @@
 // 캐러셀 렌더링
 const carousel_txt = [
+  // 프텐이랑 영문폰트랑 자간다른거 해결하기
   { root: '/resource/banner/banner_stargazers_desktop.png', description: '이세계아이돌 정규 5집', title: 'Stargazers 플레이리스트', style: 'color: white;' },
   { root: '/resource/banner/banner_event_2_desktop.png', description: '이세계아이돌 4집 응원하고 이벤트 굿즈 받아가자!', title: '4집 이벤트페이지 오픈', style: '' },
   { root: '/resource/banner/banner_streaming_pc.png', description: '스밍이 처음인 이파리들을 위한', title: '멜론 스트리밍 가이드', style: '' },
@@ -13,7 +14,6 @@ const carousel_btn = [
 function renderCarouselTxt(data) {
   const track = document.getElementById('carousel-track');
 
-  // 첫번째장은 Stargazers 영어 혼자만 폰트 다른데 이건도대체어떢께해야하나요내공1억
   data.forEach(item => {
     const carousel_img_container = `
       <div class="carousel-img-container">
@@ -27,6 +27,7 @@ function renderCarouselTxt(data) {
     track.insertAdjacentHTML('beforeend', carousel_img_container);
   });
 }
+renderCarouselTxt(carousel_txt);
 
 function renderCarouselBtn(data) {
   const track = document.getElementById('carousel-track');
@@ -48,8 +49,6 @@ function renderCarouselBtn(data) {
     track.insertAdjacentHTML('beforeend', carousel_img_container);
   });
 }
-
-renderCarouselTxt(carousel_txt);
 renderCarouselBtn(carousel_btn);
 
 // 캐러셀 기능
@@ -162,6 +161,7 @@ function backMove() {
 nextBtn.addEventListener('click', nextMove);
 backBtn.addEventListener('click', backMove);
 
+// 캐러셀 애니메이션 (6초 간격 회전)
 setInterval(() => {
   nextMove();
 }, 6000);
