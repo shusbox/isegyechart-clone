@@ -140,7 +140,7 @@
             </div>
             <p> 음원 사이트 바로가기 </p>
           </div>
-          <div id="music-link"></div>
+          <div class="music-goto-container" id="music-link"></div>
         </div>
         <div class="music-container">
           <div class="container-title">
@@ -159,6 +159,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
           </iframe>
+          <!-- 조회수 좋아요같은 통계 입력하는게아니라 불러오는걸로 고치십니다 언젠가는~~ -->
           <div id="music-play-info-container">
             <div class="music-play-info">
               <p> 조회수 </p>
@@ -176,6 +177,40 @@
             </div>
           </div>
         </div>
+        <div class="music-container">
+          <div class="container-title">
+            <div class="music-ico">
+              <svg xmlns="http://www.w3.org/2000/svg"
+              width="16px" fill="none" class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)" viewBox="0 0 20 20">
+                <g clip-path="url(#a)"><path fill="#164194" d="M13.887 5a5.12 5.12 0 0 0-3.812 1.69.1.1 0 0 1-.15 0A5.121 5.121 0 0 0 6.115 5C3.29 5 1 7.27 1 10.07c0 2.799 2.29 5.068 5.114 5.068a5.12 5.12 0 0 0 3.812-1.69.1.1 0 0 1 .149 0 5.12 5.12 0 0 0 3.812 1.69c2.824 0 5.113-2.27 5.113-5.069C19 7.27 16.71 5 13.887 5Zm0 7.705c-.819 0-1.502-.391-1.922-.832-.133-.141-.299-.334-.481-.498a4.114 4.114 0 0 0-.256-.211A2.121 2.121 0 0 0 10 10.778c-.46 0-.885.144-1.227.386-.083.062-.17.132-.256.21-.183.165-.348.358-.482.498a2.687 2.687 0 0 1-1.921.833l-.062-.002c-.036 0-.07-.002-.106-.004l-.072-.005-.042-.004a2.645 2.645 0 0 1-2.377-2.621v.011-.022.011a2.645 2.645 0 0 1 2.377-2.62l.045-.005.069-.005.106-.005h.061c.819 0 1.502.39 1.922.831.133.141.299.334.481.498.087.079.174.148.256.211.342.242.767.386 1.228.386.46 0 .885-.144 1.227-.386.083-.062.17-.132.256-.21.183-.165.348-.358.482-.499a2.687 2.687 0 0 1 1.921-.832l.061.002c.036 0 .072.001.107.004l.067.005a2.646 2.646 0 0 1 2.419 2.47l.002.026.002.072v.107c0 .027 0 .054-.002.081l-.001.017a2.646 2.646 0 0 1-2.372 2.473l-.049.004a2.931 2.931 0 0 1-.066.005l-.107.004-.06.002Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M1 5h18v10.138H1z"/></clipPath></defs>
+              </svg>
+            </div>
+            <p> SOOP 생방송 보러가기 </p>
+          </div>
+          <div class="music-goto-container" id="isegye-profile">
+            <!--
+            <div class="music-goto" style="padding: 8px;">
+              <div style="display: flex; align-items: center;">
+                <div class="isegye-profile-pic">
+                  <img src="/resource/record.png" width="28px" style="display: block;">
+                </div>
+                <p style="color: #646464; font-weight: 500;"> 아이네 </p>
+              </div>
+              <p style="color: #8d8d8d; font-size: 12px;"> 오프라인 </p>
+            </div>
+            <div class="music-goto" style="padding: 8px;">
+              <div style="display: flex; align-items: center;">
+                <div class="isegye-profile-pic">
+                  <img src="/resource/record.png" width="28px" style="display: block;">
+                </div>
+                <p style="color: #646464; font-weight: 500;"> 징버거 </p>
+              </div>
+              <p style="color: #8d8d8d; font-size: 12px;"> 오프라인 </p>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
       </div>
       <div id="main-field2">
 
@@ -183,6 +218,6 @@
     </div>
   </main>
   <script src="/script/carousel.js"></script>
-  <script src="/script/musiclink.js"></script>
+  <script src="/script/mainrendering.js"></script>
 </body>
 </html>

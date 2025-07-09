@@ -50,6 +50,15 @@ main {
 }
 
 /* 바로가기 */
+.music-goto-container {
+  margin: 4px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 186px 186px;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .music-goto {
   transition: 0.2s;
   padding: 14px;
@@ -148,16 +157,6 @@ main {
   background-color: #f0f0f0;
 }
 
-/* music link */
-#music-link {
-  margin: 4px;
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: 186px 186px;
-  justify-content: space-between;
-  gap: 8px;
-}
-
 /* music play */
 #music-play {
   display: block;
@@ -200,4 +199,14 @@ main {
   height: 44px;
   border: none;
   background-color: #e0e0e0;
+}
+
+.isegye-profile-pic {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e0e0e0;
+  border-radius: 100px;
 }

@@ -1,4 +1,4 @@
-// 음악 바로가기 렌더링
+// 음악 바로가기
 const music = [
   { root: '/resource/music/Melon.svg', name: '멜론', link: 'https://www.melon.com/song/detail.htm?songId=38958780' },
   { root: '/resource/music/Youtube.svg', name: '유튜브 뮤비', link: 'https://www.youtube.com/watch?v=nz2_gNQDiVM' },
@@ -28,3 +28,35 @@ function renderMusic(data) {
   });
 }
 renderMusic(music);
+
+// 이세계아이돌 숲 프로필
+const isegyeidol = [
+  { profile: '/resource/profile/ine.png', name: '아이네', status: '오프라인' },
+  { profile: '/resource/profile/jingburger.png', name: '징버거', status: '오프라인' },
+  { profile: '/resource/profile/lilpa.png', name: '릴파', status: '오프라인' },
+  { profile: '/resource/profile/jururu.png', name: '주르르', status: '오프라인' },
+  { profile: '/resource/profile/gosegu.png', name: '고세구', status: '오프라인' },
+  { profile: '/resource/profile/viichan.png', name: '비챤', status: '오프라인' },
+  { profile: '/resource/profile/wakgood.png', name: '우왁굳', status: '오프라인' }
+]
+
+function renderProfile(data) {
+  const profile = document.getElementById('isegye-profile');
+
+  data.forEach(item => {
+    const music_goto = `
+      <div class="music-goto" style="padding: 8px;">
+        <div style="display: flex; align-items: center;">
+          <div class="isegye-profile-pic">
+            <img src="${item.profile}" width="28px" style="display: block; border-radius: 100px;">
+          </div>
+          <p style="color: #646464; font-weight: 500;"> ${item.name} </p>
+        </div>
+        <p style="color: #8d8d8d; font-size: 12px;"> ${item.status} </p>
+      </div>
+    `;
+    profile.insertAdjacentHTML('beforeend', music_goto);
+  });
+}
+
+renderProfile(isegyeidol);
