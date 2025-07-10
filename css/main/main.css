@@ -222,7 +222,32 @@ main {
 /* 멜론의전당 */
 #melon-award {
   grid-column: span 2;
+  gap: 16px;
   border: solid 1px #f0f0f0;
+}
+
+#award-value {
+  position: absolute;
+  font-size: 18px;
+  left: 20px;
+}
+
+#award-sum {
+  margin: 0;
+  color: #007c65;
+}
+
+#award-processbar {
+  width: 100%;
+  height: 8px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,           /* 왼쪽 → 오른쪽 */
+    #4fb59e 0%,         /* 어두움 시작 */
+    #8bd0be 50%,        /* 중앙 밝음 */
+    #4fb59e 100%        /* 다시 어두움 */
+  );
 }
 
 /* 멜론차트 성적 */

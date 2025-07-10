@@ -21,7 +21,7 @@ function renderMusic(data) {
           <img src="${item.root}" width="20px">
           <p> ${item.name} </p>
         </div>
-        <img src="/resource/arrow.svg" width="12px">
+        <img src="/resource/mainPage/arrow.svg" width="12px">
       </div>
     `;
     link.insertAdjacentHTML('beforeend', music_goto);
@@ -81,7 +81,7 @@ function renderQuicklink(data) {
           <img src="${item.root}" width="20px">
           <p> ${item.name} </p>
         </div>
-        <img src="/resource/arrow.svg" width="12px">
+        <img src="/resource/mainPage/arrow.svg" width="12px">
       </div>
     `;
     link.insertAdjacentHTML('beforeend', music_goto);
