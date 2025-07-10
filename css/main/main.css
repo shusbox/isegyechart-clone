@@ -118,6 +118,14 @@ main {
   background-color: white;
 }
 
+.no-data {
+  margin: 12px;
+  margin-left: 0;
+  color: #646464;
+  font-size: 14px;
+  font-weight: 300;
+}
+
 /* song selector */
 #song-selector-container {
   display: flex;
