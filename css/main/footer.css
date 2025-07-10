@@ -7,6 +7,7 @@ footer {
 }
 
 footer p {
+  cursor: default;
   margin: 4px 0;
   color: #838383;
   font-size: 14px;

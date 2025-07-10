@@ -22,6 +22,10 @@ main {
 
 #main-field2 {
   width: 830px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: start;
+  gap: 16px;
 }
 
 /* 아이콘 */
@@ -86,6 +90,24 @@ main {
   font-size: 14px;
 }
 
+/* 버튼 */
+.music-btn {
+  transition: 0.2s;
+  cursor: pointer;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px #e0e0e0;
+  border-radius: 100px;
+  background-color: white;
+}
+
+.music-btn:hover {
+  transition: 0.2s;
+  background-color: #f0f0f0;
+}
+
 /* 컨테이너 */
 .music-container {
   display: flex;
@@ -142,23 +164,6 @@ main {
   font-size: 14px;
 }
 
-#music-btn {
-  transition: 0.2s;
-  cursor: pointer;
-  padding: 6px 12px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border: solid 1px #e0e0e0;
-  border-radius: 100px;
-  background-color: white;
-}
-
-#music-btn:hover {
-  transition: 0.2s;
-  background-color: #f0f0f0;
-}
-
 /* music play */
 #music-play {
   display: block;
@@ -212,4 +217,20 @@ main {
   justify-content: center;
   border: 2px solid #e0e0e0;
   border-radius: 100px;
+}
+
+/* 멜론의전당 */
+#melon-award {
+  grid-column: span 2;
+  border: solid 1px #f0f0f0;
+}
+
+/* 멜론차트 성적 */
+#chart-score {
+  grid-column: span 2;
+}
+
+/* 실시간 차트인 현황 */
+#live-chartin {
+  grid-column: span 2;
 }
