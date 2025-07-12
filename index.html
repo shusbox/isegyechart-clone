@@ -155,7 +155,7 @@
                 <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <p> YouTube에서 보기 </p>          
+            <p> YouTube에서 보기 </p>
           </div>
           <!-- 이거 원래사이트보니깐 유튜브로고빨갛게말고 회색으로되어있던데 그거고쳐야될듯 -->
           <iframe src="https://www.youtube.com/embed/nz2_gNQDiVM?si=pcpJ2NtpbEIYG6oV"
@@ -170,17 +170,17 @@
           <div id="music-play-info-container">
             <div class="music-play-info">
               <p> 조회수 </p>
-              <h1> 149만 </h1>
+              <h1 id="view-count"> ··· </h1>
             </div>
             <hr class="music-play-info-line">
             <div class="music-play-info">
               <p> 좋아요 </p>
-              <h1> 3.9만 </h1>
+              <h1 id="like-count"> ··· </h1>
             </div>
             <hr class="music-play-info-line">
             <div class="music-play-info">
               <p> 댓글 </p>
-              <h1> 5395 </h1>
+              <h1 id="comment-count"> ··· </h1>
             </div>
           </div>
         </div>
@@ -393,24 +393,7 @@
               </svg>
             </div>
           </div>
-          <div id="suggestion-video-container">
-            <!--
-            <div class="suggestion-video" onclick="window.open('https://youtu.be/7Q61ZtM2qyM?si=L9QqWkEy0UBIKtla')">
-              <img src="/resource/thumbnail/test1.png">
-              <div class="suggestion-video-description">
-                <h2> 이세계아이돌 (ISEGYE IDOL) 'MEMORY' 이세계페스티벌 2025 실황 </h2>
-                <p> 왁타버스 WAKTAVERSE </p>
-              </div>
-            </div>
-            <div class="suggestion-video" onclick="window.open('https://youtu.be/7Q61ZtM2qyM?si=L9QqWkEy0UBIKtla')">
-              <img src="/resource/thumbnail/test1.png">
-              <div class="suggestion-video-description">
-                <h2> 이세계아이돌 (ISEGYE IDOL) 'MEMORY' 이세계페스티벌 2025 실황 </h2>
-                <p> 왁타버스 WAKTAVERSE </p>
-              </div>
-            </div>
-            -->
-          </div>
+          <div id="suggestion-video-container"></div>
         </div>
         <div class="music-container"></div>
       </div>
@@ -435,6 +418,7 @@
   </footer>
 
   <script src="/script/carousel.js"></script>
+  <script src="/script/youtubedata.js"></script>
   <script src="/script/mainrendering.js"></script>
 </body>
 </html>
