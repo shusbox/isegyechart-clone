@@ -88,3 +88,30 @@ function renderQuicklink(data) {
   });
 }
 renderQuicklink(quicklink);
+
+// 오늘의 추천 영상
+const video = [
+  { img: '/resource/thumbnail/test1.png', title: '[Original song] 청개구리 - 데스해머쵸로키', channel: '왁타버스 WAKTAVERSE', link: 'https://youtu.be/7Q61ZtM2qyM?si=TRD31ELebjKk6CCl' },
+  { img: '/resource/thumbnail/test2.png', title: '이세계아이돌 (ISEGYE IDOL) \'Misty Rainbow\' Official MV', channel: '왁타버스 WAKTAVERSE', link: 'https://youtu.be/DJLa8QYUtmQ?si=sjuTwLkpgpc4YtA1' },
+  { img: '/resource/thumbnail/test3.png', title: '이세계아이돌 (ISEGYE IDOL) \'MEMORY\' 이세계페스티벌 2025 실황', channel: '왁타버스 WAKTAVERSE', link: 'https://youtu.be/nsVbRO_k9b8?si=-eZ3RrpMOclQgPyc' },
+  { img: '/resource/thumbnail/test4.png', title: '이세계아이돌 (ISEGYE IDOL) \'STARGAZERS\' Official MV', channel: '왁타버스 WAKTAVERSE', link: 'https://youtu.be/nz2_gNQDiVM?si=QLONtS4GXf-SmVgB' },
+  { img: '/resource/thumbnail/test5.png', title: '[Original Song] 티파니 - Q&A', channel: '왁타버스 WAKTAVERSE', link: 'https://youtu.be/4f5Db-xScu4?si=JcMObSKgZxkq4Zmv' }
+]
+
+function renderSuggestionVideo(data) {
+  const suggestion_video = document.getElementById('suggestion-video-container')
+
+  data.forEach(item => {
+    const video = `
+      <div class="suggestion-video" onclick="window.open('${item.link}')">
+        <img src="${item.img}">
+        <div class="suggestion-video-description">
+          <h2> ${item.title} </h2>
+          <p> ${item.channel} </p>
+        </div>
+      </div>
+    `;
+    suggestion_video.insertAdjacentHTML('beforeend', video);
+  });
+}
+renderSuggestionVideo(video);
