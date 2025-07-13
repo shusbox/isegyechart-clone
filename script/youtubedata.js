@@ -1,3 +1,4 @@
+// 키 가리는게좋긴해~~
 const key = 'AIzaSyDmXIRUFlgllGyXwFNiEOlqLJV_GQFtUR0';
 const videoId = 'nz2_gNQDiVM';
 const endpoint = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${key}`;

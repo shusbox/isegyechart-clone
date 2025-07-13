@@ -1,3 +1,50 @@
+// 곡 선택하기
+const selectmusic = [
+  // cover title singer select
+  { cover: '/resource/cover/5th_Stargazers.png', title: 'Stargazers', singer: '이세계아이돌', select: 'SSLB-select' },
+  { cover: '/resource/cover/5th_Stargazers.png', title: 'MEMORY', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/5th_Stargazers.png', title: 'ELEVATE', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/4th_MistyRainbow.png', title: 'Misty Rainbow', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/ost_SYZYGY.png', title: 'SYZYGY', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/TOKYO.png', title: 'TOKYO (Feat. BIG Naughty, 고세구)', singer: 'Fleeky Bang', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/etc_isegyeFestival.png', title: 'Superhero', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/etc_isegyeFestival.png', title: 'OVER', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/3rd_KIDDING.png', title: 'KIDDING', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/ost_AnotherWorld.png', title: 'Another World', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/Highway_Romanse.png', title: '고속도로 로망스', singer: '이세계록스타 (숲튽훈), 주르르', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/ost_LOCKDOWN.png', title: 'LOCKDOWN', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/CanYouFeelMyLove.png', title: '잠깐나올래', singer: 'RUSUK', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/Hollow_Season.png', title: '없는계절 (Feat. 아이네, C JAMM, YUNHWAY)', singer: '그냥노창', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/2nd_WinterSpring.png', title: '겨울봄', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+  { cover: '/resource/cover/1st_REWIND.png', title: 'RE : WIND', singer: '이세계아이돌', select: 'SSLB-noneSelect' },
+];
+
+function runderSelectMusic(data) {
+  const container = document.getElementById('song-search-list-container');
+
+  data.forEach(item => {
+    const searchMusic = `
+      <div class="song-search-list">
+        <div class="song-search-list-music">
+          <div style="display: flex; align-items: center;">
+            <img src="${item.cover}">
+            <div class="song-search-list-txt">
+              <h2> ${item.title} </h2>
+              <p> ${item.singer} </p>
+            </div>
+          </div>
+          <div class="song-search-list-btn-container">
+            <div class="song-search-list-btn ${item.select}"></div>
+          </div>
+        </div>
+        <hr class="song-search-line">
+      </div>
+    `
+    container.insertAdjacentHTML('beforeend', searchMusic);
+  });
+}
+runderSelectMusic(selectmusic);
+
 // 음악 바로가기
 const music = [
   { root: '/resource/music/Melon.svg', name: '멜론', link: 'https://www.melon.com/song/detail.htm?songId=38958780' },

@@ -8,6 +8,7 @@
   <link rel="icon" href="/resource/logo/favicon.png">
 
   <link rel="stylesheet" href="/css/main/top.css">
+  <link rel="stylesheet" href="/css/main/hide.css">
   <link rel="stylesheet" href="/css/main/main.css">
   <link rel="stylesheet" href="/css/main/footer.css">
 
@@ -27,6 +28,7 @@
     html, body {
       margin: 0;
       padding: 0;
+      overflow: auto;
       font-family: 
         'Product Sans',
         'Pretendard'
@@ -36,6 +38,35 @@
   </style>
 </head>
 <body>
+  <!-- 모달 올라올때 내려갈떄 애니메이션... ....... -->
+  <div id="modal-background">
+    <div id="song-search">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div id="show-bar"></div>
+        <div class="container-title">
+          <div class="music-ico">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="16px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
+            class="w_var(--icon-size,_16px) h_var(--icon-size,_16px)">
+              <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <p> 곡 선택하기 </p>
+        </div>
+        <div id="song-search-input-container">
+          <svg xmlns="http://www.w3.org/2000/svg"
+          width="16px" viewBox="0 0 24 24" fill="#606060" aria-hidden="true" data-slot="icon"
+          class="w_var(--icon-size,_16px) h_var(--icon-size,_16px) c_old.contentGray1">
+            <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"></path>
+          </svg>
+          <input type="text" id="song-search-input" placeholder="곡 검색하기">
+        </div>
+        <div id="song-search-list-container"></div>
+      </div>
+      <button id="song-search-close-btn"> 닫기 </button>
+    </div>
+  </div>
+
   <div id="notice-container"> 멜론의 전당 집계가 종료되었습니다. 새 플레이리스트로 교체해주세요! </div>
   <div style="width: 100%; background-color: white; display: flex; flex-direction: column; align-items: center;">
     <div style="width: 1280px;">
@@ -125,7 +156,7 @@
               <p> 이세계아이돌 </p>
             </div>            
           </div>
-          <button class="music-btn">
+          <button id="song-selector-btn" class="music-btn">
             <p style="margin: 0; font-size: 12px;"> 곡 선택 </p>
             <svg xmlns="http://www.w3.org/2000/svg"
             width="12px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
@@ -295,9 +326,24 @@
             </div>
           </div>
           <div class="field2-mini-container">
-            <div class="score-graph"></div>
-            <div class="score-graph"></div>
-            <div class="score-graph"></div>
+            <div class="score-graph">
+              <div class="score-graph-txt">
+                <h2> TOP100 </h2>
+                <h1> 순위권 밖 </h1>
+              </div>
+            </div>
+            <div class="score-graph">
+              <div class="score-graph-txt">
+                <h2> HOT100 (100일) </h2>
+                <h1> 순위권 밖 </h1>
+              </div>
+            </div>
+            <div class="score-graph">
+              <div class="score-graph-txt">
+                <h2> 실시간 </h2>
+                <h1> 순위권 밖 </h1>
+              </div>
+            </div>
           </div>
         </div>
         <div class="music-container" id="live-chartin">
@@ -384,7 +430,8 @@
               </div>
               <p> 오늘의 추천 영상 </p>
             </div>
-            <div class="music-btn">
+            <!-- 이거 재생목록에잇는곡 랜덤으로나오게 할수있으면 하면좋?을?듯? -->
+            <div class="music-btn" onclick="window.open('https://www.youtube.com/playlist?list=PLWTycz4el4t7ZCxkGYyekoP1iBxmOM4zZ')">
               <p style="margin: 0; font-size: 12px;"> 전체 플레이리스트 </p>
               <svg xmlns="http://www.w3.org/2000/svg"
               width="12px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon"
@@ -417,8 +464,10 @@
     <p id="footer-txt"> Build 1d8f8da | Rendered at 2025.07.09 13:26:05 </p>
   </footer>
 
+  <script src="/script/main.js"></script>
   <script src="/script/carousel.js"></script>
   <script src="/script/youtubedata.js"></script>
+  <!-- <script src="/script/sooplivestatus.js"></script> -->
   <script src="/script/mainrendering.js"></script>
 </body>
 </html>
