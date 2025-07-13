@@ -1,14 +1,14 @@
 // 캐러셀 렌더링
 const carousel_txt = [
   // 프텐이랑 영문폰트랑 자간다른거 해결하기
-  { root: '/resource/banner/banner_stargazers_desktop.png', description: '이세계아이돌 정규 5집', title: 'Stargazers 플레이리스트', style: 'color: white;' },
-  { root: '/resource/banner/banner_event_2_desktop.png', description: '이세계아이돌 4집 응원하고 이벤트 굿즈 받아가자!', title: '4집 이벤트페이지 오픈', style: '' },
-  { root: '/resource/banner/banner_streaming_pc.png', description: '스밍이 처음인 이파리들을 위한', title: '멜론 스트리밍 가이드', style: '' },
-  { root: '/resource/banner/banner_1_desktop.png', description: '이세계아이돌을 처음 보는 <br> 새싹들을 위한 길라잡이', title: '이세돌 유입 가이드', style: '' }
+  { root: 'resource/banner/banner_stargazers_desktop.png', description: '이세계아이돌 정규 5집', title: 'Stargazers 플레이리스트', style: 'color: white;' },
+  { root: 'resource/banner/banner_event_2_desktop.png', description: '이세계아이돌 4집 응원하고 이벤트 굿즈 받아가자!', title: '4집 이벤트페이지 오픈', style: '' },
+  { root: 'resource/banner/banner_streaming_pc.png', description: '스밍이 처음인 이파리들을 위한', title: '멜론 스트리밍 가이드', style: '' },
+  { root: 'resource/banner/banner_1_desktop.png', description: '이세계아이돌을 처음 보는 <br> 새싹들을 위한 길라잡이', title: '이세돌 유입 가이드', style: '' }
 ];
 
 const carousel_btn = [
-  { root: '/resource/banner/banner_2_desktop.png', txt: '이세계차트팀 지원하기', click: 'https://cafe.naver.com/steamindiegame/16869116' }
+  { root: 'resource/banner/banner_2_desktop.png', txt: '이세계차트팀 지원하기', click: 'https://cafe.naver.com/steamindiegame/16869116' }
 ];
 
 function renderCarouselTxt(data) {
